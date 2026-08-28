@@ -1,0 +1,591 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f5f6f8;
+
+    color: #222;
+
+    padding: 25px;
+
+}
+
+
+.container {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+}
+
+
+h1 {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==============================
+   CONTROLES
+============================== */
+
+.controles {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: end;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.08);
+
+}
+
+
+.controles div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.controles label {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+select,
+input {
+
+    height: 40px;
+
+    padding: 0 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    background: white;
+
+    font-size: 14px;
+
+}
+
+
+.controles input {
+
+    width: 100px;
+
+}
+
+
+button {
+
+    height: 40px;
+
+    padding: 0 16px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    opacity: .9;
+
+}
+
+
+button.novo {
+
+    background: #16a34a;
+
+}
+
+
+button.validar {
+
+    background: #0f766e;
+
+}
+
+
+/* ==============================
+   LEGENDA
+============================== */
+
+.legenda {
+
+    background: white;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    font-size: 13px;
+
+}
+
+
+/* ==============================
+   RESULTADO
+============================== */
+
+#resultado-validacao {
+
+    margin-bottom: 15px;
+
+}
+
+
+.validacao-titulo {
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+.validacao-ok {
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    border: 1px solid #86efac;
+
+    padding: 12px;
+
+    border-radius: 7px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.validacao-erro {
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+    border: 2px solid #ef4444;
+
+    padding: 12px;
+
+    border-radius: 7px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.validacao-aviso {
+
+    background: #fef3c7;
+
+    color: #92400e;
+
+    border: 1px solid #f59e0b;
+
+    padding: 12px;
+
+    border-radius: 7px;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ==============================
+   TABELA
+============================== */
+
+.escala-container {
+
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: auto;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.08);
+
+}
+
+
+table {
+
+    border-collapse: collapse;
+
+    width: max-content;
+
+    min-width: 100%;
+
+}
+
+
+th,
+td {
+
+    border: 1px solid #ddd;
+
+    text-align: center;
+
+}
+
+
+th {
+
+    background: #f1f3f5;
+
+    padding: 10px;
+
+    font-size: 13px;
+
+    min-width: 82px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2;
+
+}
+
+
+th:first-child {
+
+    min-width: 180px;
+
+    left: 0;
+
+    z-index: 3;
+
+}
+
+
+td:first-child {
+
+    min-width: 180px;
+
+    position: sticky;
+
+    left: 0;
+
+    z-index: 1;
+
+    background: white;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    padding: 10px;
+
+}
+
+
+/* ==============================
+   CÉLULA
+============================== */
+
+.celula-dia {
+
+    width: 82px;
+
+    height: 68px;
+
+    padding: 3px;
+
+    transition: .2s;
+
+}
+
+
+.celula-dia select {
+
+    width: 100%;
+
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    outline: none;
+
+}
+
+
+.celula-dia input {
+
+    width: 100%;
+
+    height: 28px;
+
+    border: none;
+
+    border-top: 1px solid
+        rgba(0,0,0,.1);
+
+    border-radius: 0;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    background: transparent;
+
+    outline: none;
+
+}
+
+
+/* ==============================
+   CORES DAS SITUAÇÕES
+============================== */
+
+.celula-dia.trabalho {
+
+    background: #dcfce7;
+
+    color: #166534;
+
+}
+
+
+.celula-dia.folga {
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+}
+
+
+.celula-dia.ferias {
+
+    background: #fef3c7;
+
+    color: #92400e;
+
+}
+
+
+.celula-dia.atestado {
+
+    background: #dbeafe;
+
+    color: #1e40af;
+
+}
+
+
+.celula-dia.outro {
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+}
+
+
+/* ==============================
+   PROBLEMAS
+============================== */
+
+.celula-problema {
+
+    background: #fecaca !important;
+
+    border: 3px solid #dc2626 !important;
+
+    box-shadow:
+        inset 0 0 0 2px #fff;
+
+}
+
+
+.celula-problema select,
+.celula-problema input {
+
+    color: #991b1b !important;
+
+    font-weight: bold;
+
+}
+
+
+/* ==============================
+   AVISO
+============================== */
+
+.celula-aviso {
+
+    background: #fed7aa !important;
+
+    border: 3px solid #ea580c !important;
+
+}
+
+
+/* ==============================
+   DOMINGO SEM FOLGA
+============================== */
+
+.celula-domingo-problema {
+
+    background: #fde68a !important;
+
+    border: 3px solid #d97706 !important;
+
+}
+
+
+/* ==============================
+   DOMINGO
+============================== */
+
+.domingo {
+
+    border-left: 2px solid #ef4444;
+
+    border-right: 2px solid #ef4444;
+
+}
+
+
+/* ==============================
+   FUNCIONÁRIO
+============================== */
+
+.nome-funcionario {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.excluir {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    width: 25px;
+
+    height: 25px;
+
+    padding: 0;
+
+    border-radius: 5px;
+
+}
+
+
+/* ==============================
+   RESPONSIVO
+============================== */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+
+    .controles {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .controles input,
+    .controles select,
+    .controles button {
+
+        width: 100%;
+
+    }
+
+}
